@@ -1,0 +1,14 @@
+name = "GSDFiles"
+uuid = "64a8acd3-9415-46af-9ee4-f25c25bec2f1"
+version = "0.1.0"
+
+[deps]
+
+[compat]
+julia = "1.11"             
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

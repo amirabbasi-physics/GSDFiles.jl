@@ -1,0 +1,21 @@
+name: TagBot
+
+on:
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+
+jobs:
+  TagBot:
+    # Only run when triggered by TagBot or manually
+    if: github.event_name == 'workflow_dispatch' || github.actor == 'JuliaTagBot'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # <-- REQUIRED so TagBot can create tags/releases
+    steps:
+      - uses: JuliaRegistries/TagBot@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # If you use Documenter.jl with SSH deploy, keep the next line.
+          # Otherwise you can remove it safely.
+          ssh: ${{ secrets.DOCUMENTER_KEY }}

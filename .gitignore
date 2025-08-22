@@ -1,0 +1,16 @@
+# Julia
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+*.ji
+*.so
+
+# VS Code / IDE
+.vscode/
+.idea/
+
+# Environments
+Manifest.toml
+
+# OS
+.DS_Store
